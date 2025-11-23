@@ -2,7 +2,7 @@ const router = require('express').Router();
 
 const { signup } = require('../controller/appController.js')
 
-// Render homepage
+// Render laman awal
 router.get('/', (req, res) => {
     res.render('index');
 });

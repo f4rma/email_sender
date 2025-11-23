@@ -2,7 +2,7 @@ const nodemailer = require('nodemailer');
 
 const { EMAIL, PASSWORD } = require('../env.js')
 
-/** send mail from real Gmail account */
+/** kirim mail dari real Gmail account */
 const signup = async (req, res) => {
     try {
         // Get data from form
@@ -25,20 +25,20 @@ const signup = async (req, res) => {
         });
 
         let emailMessage = {
-            from: `"Raditya Putra Farma" <${EMAIL}>`, // sender address
-            to: recipient, // recipient from form
-            subject: subject, // subject from form
-            text: message, // plain text body from form
+            from: `"Raditya Putra Farma" <${EMAIL}>`, //pengirim
+            to: recipient, // penerima
+            subject: subject, 
+            text: message,
             html: `<div style="font-family: Arial, sans-serif; padding: 20px; max-width: 600px; margin: 0 auto; border: 1px solid #e0e0e0; border-radius: 12px;">
                      <div style="background: #003161; color: white; padding: 20px; border-radius: 10px 10px 0 0; text-align: center;">
-                       <h1 style="margin: 0; font-size: 24px;">📧 Email Sender Portfolio</h1>
+                       <h1 style="margin: 0; font-size: 24px;">Email Sender</h1>
                      </div>
                      <div style="padding: 30px 20px;">
                        <h2 style="color: #003161; margin-top: 0;">${subject}</h2>
                        <p style="line-height: 1.8; color: #333; white-space: pre-wrap;">${message}</p>
                      </div>
                      <div style="background: #f9f9f9; padding: 15px 20px; border-radius: 0 0 10px 10px; text-align: center;">
-                       <p style="color: #888; font-size: 12px; margin: 0;">Dikirim melalui Email Sender Portfolio | © 2025 Raditya Putra Farma</p>
+                       <p style="color: #888; font-size: 12px; margin: 0;">Dikirim melalui Email Sender | Raditya Putra Farma | NIM.23343050</p>
                      </div>
                    </div>`, // html body
         }

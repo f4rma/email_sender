@@ -6,17 +6,17 @@ const btnLoading = document.getElementById('btnLoading');
 emailForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     
-    // Get form data
+    // Get dari data
     const recipient = document.getElementById('recipient').value;
     const subject = document.getElementById('subject').value;
     const message = document.getElementById('message').value;
     
-    // Show loading state
+    // loading state
     btnText.style.display = 'none';
     btnLoading.style.display = 'inline';
     emailForm.querySelector('button').disabled = true;
     
-    // Hide previous response
+    // hapus response setelahnya
     responseMessage.classList.remove('show', 'success', 'error');
     
     try {
