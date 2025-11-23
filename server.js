@@ -25,12 +25,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/', appRoute);
 app.use('/api', appRoute);
 
-// For local development
-if (require.main === module) {
-    app.listen(PORT, () => {
-        console.log(`Server berjalan di http://localhost:${PORT}`)
-    });
-}
-
-// Export for Vercel
-module.exports = app;
+app.listen(PORT, () => {
+    console.log(`Server berjalan di http://localhost:${PORT}`)
+});
