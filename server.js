@@ -25,12 +25,12 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/', appRoute);
 app.use('/api', appRoute);
 
-// Export for Vercel serverless
-module.exports = app;
-
-// Only start server if not in Vercel environment
-if (process.env.NODE_ENV !== 'production') {
+// For local development
+if (require.main === module) {
     app.listen(PORT, () => {
         console.log(`Server berjalan di http://localhost:${PORT}`)
     });
 }
+
+// Export for Vercel
+module.exports = app;
