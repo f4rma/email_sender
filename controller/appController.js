@@ -46,7 +46,7 @@ const signup = async (req, res) => {
         let info = await transporter.sendMail(emailMessage);
         
         return res.status(201).json({ 
-            msg: "Email berhasil dikirim ke inbox penerima! ✅",
+            msg: "Email berhasil dikirim ke inbox penerima!",
             info: info.messageId
         });
     } catch (error) {

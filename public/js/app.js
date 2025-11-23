@@ -36,17 +36,17 @@ emailForm.addEventListener('submit', async (e) => {
         
         // Show response
         if (response.ok) {
-            responseMessage.textContent = `✅ ${data.msg}`;
+            responseMessage.textContent = `${data.msg}`;
             responseMessage.classList.add('show', 'success');
             
             // Reset form
             emailForm.reset();
         } else {
-            responseMessage.textContent = `❌ ${data.msg || 'Gagal mengirim email'}`;
+            responseMessage.textContent = `${data.msg || 'Gagal mengirim email'}`;
             responseMessage.classList.add('show', 'error');
         }
     } catch (error) {
-        responseMessage.textContent = `❌ Terjadi kesalahan: ${error.message}`;
+        responseMessage.textContent = `Terjadi kesalahan: ${error.message}`;
         responseMessage.classList.add('show', 'error');
     } finally {
         // Reset button state
