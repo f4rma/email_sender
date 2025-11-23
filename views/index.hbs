@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="id">
+  {{> head}}
+  <body>
+    {{> header}}
+    <div class="main-content">
+      <section class="hero-search">
+        <h2 class="hero-title">Aplikasi Kirim Email</h2>
+        <p style="color: #666; margin-bottom: 10px;">Masukkan detail email Anda dan kirim pesan ke penerima dengan cepat</p>
+        
+        <form class="email-form" id="emailForm">
+          <div class="form-group">
+            <label for="recipient">Email Penerima</label>
+            <input type="email" id="recipient" name="recipient" placeholder="contoh@gmail.com" required />
+          </div>
+          
+          <div class="form-group">
+            <label for="subject">Subjek Email</label>
+            <input type="text" id="subject" name="subject" placeholder="Masukkan subjek email" required />
+          </div>
+          
+          <div class="form-group">
+            <label for="message">Pesan</label>
+            <textarea id="message" name="message" rows="6" placeholder="Tulis pesan Anda di sini..." required></textarea>
+          </div>
+          
+          <button type="submit" class="btn-send">
+            <span id="btnText">Kirim Email</span>
+            <span id="btnLoading" style="display: none;">⏳ Mengirim...</span>
+          </button>
+        </form>
+        
+        <div id="responseMessage" class="response-box"></div>
+      </section>
+
+    </div>
+    {{> footer}}
+    <script src="/js/app.js"></script>
+  </body>
+</html>
